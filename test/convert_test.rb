@@ -41,17 +41,27 @@ class ConversionTest < Test::Unit::TestCase
     def test_convert
         f = [32.0, 212.0, -40.0, 32, 212, -40]
         c = [0.0, 100.0, -40.0, 0, 100, -40]
+        k = [273.15, 373.15, 233.15, 273.15, 373.15, 233.15]
         
         f.each_with_index do |n, i|
             temp = "#{n}F".to_degrees
-            assert_equal(temp.to_C, c[i])
-            assert_equal(temp.to_F, f[i])
+            assert_in_delta(temp.to_C, c[i], 0.00001)
+            assert_in_delta(temp.to_F, f[i], 0.00001)
+            assert_in_delta(temp.to_K, k[i], 0.00001)
         end
 
         c.each_with_index do |n, i|
             temp = "#{n}C".to_degrees
-            assert_equal(temp.to_C, c[i])
-            assert_equal(temp.to_F, f[i])
+            assert_in_delta(temp.to_C, c[i], 0.00001)
+            assert_in_delta(temp.to_F, f[i], 0.00001)
+            assert_in_delta(temp.to_K, k[i], 0.00001)
+        end
+
+        k.each_with_index do |n, i|
+            temp = "#{n}K".to_degrees
+            assert_in_delta(temp.to_C, c[i], 0.00001)
+            assert_in_delta(temp.to_F, f[i], 0.00001)
+            assert_in_delta(temp.to_K, k[i], 0.00001)
         end
     end
     
