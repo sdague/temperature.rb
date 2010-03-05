@@ -1,9 +1,24 @@
 class Numeric
-    attr_accessor :units
+    @units
     
     CScale = 1.8
     FOffset = 32
     KOffset = 273.15
+
+    def units
+        if @units
+            return @units
+        else
+            return "F"
+        end
+    end
+        
+    def units=(u)
+        if u =~ /^(C|F|K)/
+            @units = u
+        end
+        return @units
+    end
     
     def is_F?
         return self.units == "F"
@@ -80,6 +95,17 @@ class Numeric
 
     def k2f
         self.k2c.c2f
+    end
+    
+    def dewpoint(rh)
+        units = self.units
+        temp = self.to_C
+        e_sub_s = 6.112 * Math.exp((17.76 * temp) / (temp + 243.5))
+        e = rh * e_sub_s / 100
+        dew = 243.5 * Math.log(e / 6.112) / (17.67 -  Math.log(e / 6.112))
+        dew.units = "C"
+        final = dew.send("to_#{units}")
+        return final
     end
 
         
