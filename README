@@ -1,0 +1,45 @@
+= Overview 
+
+Temperature makes it easy to deal with temperatures in Ruby, but
+adding mixin methods to numbers and strings.  
+
+This was inspired by using Ruby to manipulate data from my home
+weather station, and wanting it to keep track of the units for me so
+that I didn't have to think about that in code.
+
+== Example
+
+  freezing_in_F = 32
+  freezing_in_C = freezing_in_F.to_C
+
+  boiling_in_C = 100
+  boiling_in_C.units = "C"
+  boiling_in_F = boiling_in_C.to_F
+
+  absolute_zero = "0K".to_degrees
+  absolute_zero_in_C = absolute_zero.to_C
+  absolute_zero_in_F = absolute_zero.to_F
+
+There is also support to calculate dewpoint from relative humidity
+based on the NOAA approximation documented here -
+http://en.wikipedia.org/wiki/Dew_point#Closer_approximation
+
+  dewpoint = 32.dewpoint(45)
+
+== Installation
+
+First install the gem
+
+  gem install temperature
+
+Then include it in your environment
+
+  require "temperature"
+
+== Authors
+
+Sean Dague <sean at dague dot net>
+
+== License
+
+This is released under an MIT license, see COPYING for full details.
