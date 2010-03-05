@@ -9,6 +9,7 @@ class Numeric
         if @units
             return @units
         else
+            # this should auto detect the env, but for now, I live in the US
             return "F"
         end
     end
