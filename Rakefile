@@ -6,7 +6,7 @@ require 'rake/clean'
 require 'rake/contrib/sshpublisher'
 
 PKG_NAME = "temperature"
-PKG_VERSION = "0.1"
+PKG_VERSION = "1.0"
 
 $VERBOSE = nil
 TEST_CHANGES_SINCE = Time.now - 600 # Recent tests = changed in last 10 minutes
@@ -49,7 +49,7 @@ end
 Rake::RDocTask.new(:doc) { |rdoc|
   rdoc.main = 'README'
   rdoc.rdoc_files.include('lib/**/*.rb', 'README')
-  rdoc.rdoc_files.include('GPL', 'COPYING')
+  rdoc.rdoc_files.include('COPYING')
   rdoc.rdoc_dir = 'docs/temperature'
   rdoc.title    = "Temperature -- Temperature mixin for Numerics and Strings"
   rdoc.options << "--include=examples --line-numbers --inline-source"
@@ -95,15 +95,16 @@ task :publish_docs => [:doc] do
     publisher.upload
 end
 
+
 desc "Publish the release files to RubyForge."
 task :release => [ :package, :publish_docs ] do
     require 'rubyforge'
     packages = %w( gem tgz zip ).collect{ |ext| "pkg/#{PKG_NAME}-#{PKG_VERSION}.#{ext}" }
     rubyforge = RubyForge.new
     rubyforge.configure
-    rubyforge.scrape_config
-    rubyforge.scrape_project(PKG_NAME)
-    rubyforge.add_release(540, PKG_NAME, "v#{PKG_VERSION}", *packages)
+    rubyforge.login
+    rubyforge.scrape_project("sdaguegems")
+    rubyforge.add_release("sdaguegems", PKG_NAME, "v#{PKG_VERSION}", *packages)
 end
 
 desc 'Install the gem globally (requires sudo)'
