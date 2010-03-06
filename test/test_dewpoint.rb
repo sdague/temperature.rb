@@ -1,7 +1,4 @@
-#!/usr/bin/ruby
-
-require "test/unit"
-require "temperature"
+require File.dirname(__FILE__) + '/test_helper.rb'
 
 class DewpointTest < Test::Unit::TestCase
     

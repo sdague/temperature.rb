@@ -1,3 +1,7 @@
+module Temperature
+    VERSION = "1.1.0"
+end
+
 # Temperature works as a mixin on both the Numeric and String classes.
 # The idea is to make manipulating temperatures as simple and natural
 # as possible.  If units are not specified, they are assume to be in
@@ -11,9 +15,8 @@
 #   num = 0
 #   num.units = "C"
 #   freezing_in_F = num.to_F
-
 class Numeric
-    @units
+    @units = "F"
 
     # The scale factor between C and F
     CScale = 1.8
@@ -34,9 +37,9 @@ class Numeric
         end
     end
         
-    def units=(u)
-        if u =~ /^(C|F|K)/
-            @units = u
+    def units=(units)
+        if units =~ /^(C|F|K)/
+            @units = units
         end
         return @units
     end
@@ -60,12 +63,9 @@ class Numeric
     # returns itself.
     def to_F
         case self.units
-        when "F":
-                return self
-        when "C":
-                return self.c2f
-        when "K":
-                return self.k2f
+        when "F" then return self
+        when "C" then return self.c2f
+        when "K" then return self.k2f
         end
     end
 
@@ -73,12 +73,9 @@ class Numeric
     # returns itself.
     def to_C
         case self.units
-        when "F":
-                return self.f2c
-        when "C":
-                return self
-        when "K":
-                return self.k2c
+        when "F" then return self.f2c
+        when "C" then return self
+        when "K" then return self.k2c
         end
     end
         
@@ -86,12 +83,9 @@ class Numeric
     # returns itself.
     def to_K
         case self.units
-        when "F":
-                return self.f2k
-        when "C":
-                return self.c2k
-        when "K":
-                return self
+        when "F" then return self.f2k
+        when "C" then return self.c2k
+        when "K" then return self
         end
     end
         

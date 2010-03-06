@@ -1,0 +1,66 @@
+= temperature
+
+* http://github.com/sdague/temperature.rb
+
+== DESCRIPTION:
+
+Temperature makes it easy to deal with temperatures in Ruby, but
+adding mixin methods to numbers and strings.  
+
+This was inspired by using Ruby to manipulate data from my home
+weather station, and wanting it to keep track of the units for me so
+that I didn't have to think about that in code.
+
+== FEATURES/PROBLEMS:
+
+* Should autodetect what units are appropriate for the locale
+
+== SYNOPSIS:
+
+  freezing_in_F = 32
+  freezing_in_C = freezing_in_F.to_C
+
+  boiling_in_C = 100
+  boiling_in_C.units = "C"
+  boiling_in_F = boiling_in_C.to_F
+
+  absolute_zero = "0K".to_degrees
+  absolute_zero_in_C = absolute_zero.to_C
+  absolute_zero_in_F = absolute_zero.to_F
+
+There is also support to calculate dewpoint from relative humidity
+based on the NOAA approximation documented here -
+http://en.wikipedia.org/wiki/Dew_point#Closer_approximation
+
+  dewpoint = 32.dewpoint(45)
+
+== REQUIREMENTS:
+
+== INSTALL:
+
+sudo gem install temperature
+
+== LICENSE:
+
+(The MIT License)
+
+Copyright (c) 2010 Sean Dague
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
