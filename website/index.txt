@@ -3,66 +3,44 @@ h1. temperature
 
 h2. What
 
+Temperature makes it easy to deal with temperatures in Ruby, but
+adding mixin methods to numbers and strings.  
+
+This was inspired by using Ruby to manipulate data from my home
+weather station, and wanting it to keep track of the units for me so
+that I didn't have to think about that in code.
 
 h2. Installing
 
 <pre syntax="ruby">sudo gem install temperature</pre>
 
-h2. The basics
-
-
 h2. Demonstration of usage
 
+<pre syntax="ruby">freezing_in_F = 32
+freezing_in_C = freezing_in_F.to_C
 
+boiling_in_C = 100
+boiling_in_C.units = "C"
+boiling_in_F = boiling_in_C.to_F
 
-h2. Forum
+absolute_zero = "0K".to_degrees
+absolute_zero_in_C = absolute_zero.to_C
+absolute_zero_in_F = absolute_zero.to_F</pre>
 
-"http://groups.google.com/group/temperature":http://groups.google.com/group/temperature
+There is also support to calculate dewpoint from relative humidity
+based on the NOAA approximation documented here -
+http://en.wikipedia.org/wiki/Dew_point#Closer_approximation
 
-TODO - create Google Group - temperature
+<pre syntax="ruby">dewpoint = 32.dewpoint(45)</pre>
 
 h2. How to submit patches
 
-Read the "8 steps for fixing other people's code":http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/ and for section "8b: Submit patch to Google Groups":http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/#8b-google-groups, use the Google Group above.
+Read the "8 steps for fixing other people's
+code":http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/
 
-TODO - pick SVN or Git instructions
+* github: "http://github.com/sdague/temperature/tree/master":http://github.com/sdague/temperature/tree/master
 
-The trunk repository is <code>svn://rubyforge.org/var/svn/temperature/trunk</code> for anonymous access.
-
-OOOORRRR
-
-You can fetch the source from either:
-
-<% if rubyforge_project_id %>
-
-* rubyforge: "http://rubyforge.org/scm/?group_id=<%= rubyforge_project_id %>":http://rubyforge.org/scm/?group_id=<%= rubyforge_project_id %>
-
-<pre>git clone git://rubyforge.org/temperature.git</pre>
-
-<% else %>
-
-* rubyforge: MISSING IN ACTION
-
-TODO - You can not created a RubyForge project, OR have not run <code>rubyforge config</code>
-yet to refresh your local rubyforge data with this projects' id information.
-
-When you do this, this message will magically disappear!
-
-Or you can hack website/index.txt and make it all go away!!
-
-<% end %>
-
-* github: "http://github.com/GITHUB_USERNAME/temperature/tree/master":http://github.com/GITHUB_USERNAME/temperature/tree/master
-
-<pre>git clone git://github.com/GITHUB_USERNAME/temperature.git</pre>
-
-
-TODO - add "github_username: username" to ~/.rubyforge/user-config.yml and newgem will reuse it for future projects.
-
-
-* gitorious: "git://gitorious.org/temperature/mainline.git":git://gitorious.org/temperature/mainline.git
-
-<pre>git clone git://gitorious.org/temperature/mainline.git</pre>
+<pre>git clone git://github.com/sdague/temperature.git</pre>
 
 h3. Build and test instructions
 
@@ -77,5 +55,5 @@ This code is free to use under the terms of the MIT license.
 
 h2. Contact
 
-Comments are welcome. Send an email to "FIXME full name":mailto:FIXME email via the "forum":http://groups.google.com/group/temperature
+Comments are welcome. Send an email to "Sean Dague":mailto:sean@dague.net
 
