@@ -33,6 +33,11 @@ http://en.wikipedia.org/wiki/Dew_point#Closer_approximation
 
 <pre syntax="ruby">dewpoint = 32.dewpoint(45)</pre>
 
+h2. API Documentation
+
+Full module level documentat can be found here:http://sdaguegems.rubyforge.org/temperature/rdoc
+
+
 h2. How to submit patches
 
 Read the "8 steps for fixing other people's
