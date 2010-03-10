@@ -6,6 +6,8 @@ README.rdoc
 Rakefile
 config/website.yml
 lib/temperature.rb
+lib/temperature/numeric.rb
+lib/temperature/string.rb
 script/console
 script/destroy
 script/generate

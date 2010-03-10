@@ -4,6 +4,8 @@ require 'hoe'
 require 'fileutils'
 require './lib/temperature'
 
+ENV['VERSION'] = Temperature::VERSION
+
 Hoe.plugin :newgem
 Hoe.plugin :website
 # Hoe.plugin :cucumberfeatures
