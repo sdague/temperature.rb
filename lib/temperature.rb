@@ -10,5 +10,5 @@ require 'temperature/string'
 # degrees 'F'.  Yes, I realize this is US centric, but that's where I
 # live.  In the future I'd like to auto detect that base on locale.
 module Temperature
-    VERSION = "1.1.0"
+    VERSION = "1.1.1"
 end
