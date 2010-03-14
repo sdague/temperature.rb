@@ -9,5 +9,11 @@ class DewpointTest < Test::Unit::TestCase
         end
     end
 
+    def test_dewpoint_s
+        (1..100).each do |temp|
+            assert_in_delta(temp, temp.dewpoint("100"), 0.5)
+        end
+    end
+
 end
 

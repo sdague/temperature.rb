@@ -38,32 +38,37 @@
       </div>
     </div>
     <h2>What</h2>
+<p>Temperature makes it easy to deal with temperatures in Ruby, but<br />
+adding mixin methods to numbers and strings.</p>
+<p>This was inspired by using Ruby to manipulate data from my home<br />
+weather station, and wanting it to keep track of the units for me so<br />
+that I didn&#8217;t have to think about that in code.</p>
 <h2>Installing</h2>
 <p><pre class='syntax'><span class="ident">sudo</span> <span class="ident">gem</span> <span class="ident">install</span> <span class="ident">temperature</span></pre></p>
-<h2>The basics</h2>
 <h2>Demonstration of usage</h2>
-<h2>Forum</h2>
-<p><a href="http://groups.google.com/group/temperature">http://groups.google.com/group/temperature</a></p>
-<p><span class="caps">TODO</span> &#8211; create Google Group &#8211; temperature</p>
+<p><pre class='syntax'><span class="ident">freezing_in_F</span> <span class="punct">=</span> <span class="number">32</span>
+<span class="ident">freezing_in_C</span> <span class="punct">=</span> <span class="ident">freezing_in_F</span><span class="punct">.</span><span class="ident">to_C</span>
+
+<span class="ident">boiling_in_C</span> <span class="punct">=</span> <span class="number">100</span>
+<span class="ident">boiling_in_C</span><span class="punct">.</span><span class="ident">units</span> <span class="punct">=</span> <span class="punct">&quot;</span><span class="string">C</span><span class="punct">&quot;</span>
+<span class="ident">boiling_in_F</span> <span class="punct">=</span> <span class="ident">boiling_in_C</span><span class="punct">.</span><span class="ident">to_F</span>
+
+<span class="ident">absolute_zero</span> <span class="punct">=</span> <span class="punct">&quot;</span><span class="string">0K</span><span class="punct">&quot;.</span><span class="ident">to_degrees</span>
+<span class="ident">absolute_zero_in_C</span> <span class="punct">=</span> <span class="ident">absolute_zero</span><span class="punct">.</span><span class="ident">to_C</span>
+<span class="ident">absolute_zero_in_F</span> <span class="punct">=</span> <span class="ident">absolute_zero</span><span class="punct">.</span><span class="ident">to_F</span></pre></p>
+<p>There is also support to calculate dewpoint from relative humidity<br />
+based on the <span class="caps">NOAA</span> approximation documented here -<br />
+http://en.wikipedia.org/wiki/Dew_point#Closer_approximation</p>
+<p><pre class='syntax'><span class="ident">dewpoint</span> <span class="punct">=</span> <span class="number">32</span><span class="punct">.</span><span class="ident">dewpoint</span><span class="punct">(</span><span class="number">45</span><span class="punct">)</span></pre></p>
+<h2><span class="caps">API</span> Documentation</h2>
+<p>Full module level documentat can be found here:http://sdaguegems.rubyforge.org/temperature/rdoc</p>
 <h2>How to submit patches</h2>
-<p>Read the <a href="http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/">8 steps for fixing other people&#8217;s code</a> and for section <a href="http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/#8b-google-groups">8b: Submit patch to Google Groups</a>, use the Google Group above.</p>
-<p><span class="caps">TODO</span> &#8211; pick <span class="caps">SVN</span> or Git instructions</p>
-<p>The trunk repository is <code>svn://rubyforge.org/var/svn/temperature/trunk</code> for anonymous access.</p>
-<p><span class="caps">OOOORRRR</span></p>
-<p>You can fetch the source from either:</p>
+<p>Read the <a href="http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/">8 steps for fixing other people&#8217;s<br />
+code</a></p>
 <ul>
-	<li>rubyforge: <a href="http://rubyforge.org/scm/?group_id=8060">http://rubyforge.org/scm/?group_id=8060</a></li>
+	<li>github: <a href="http://github.com/sdague/temperature/tree/master">http://github.com/sdague/temperature/tree/master</a></li>
 </ul>
-<pre>git clone git://rubyforge.org/temperature.git</pre>
-<ul>
-	<li>github: <a href="http://github.com/GITHUB_USERNAME/temperature/tree/master">http://github.com/GITHUB_USERNAME/temperature/tree/master</a></li>
-</ul>
-<pre>git clone git://github.com/GITHUB_USERNAME/temperature.git</pre>
-<p><span class="caps">TODO</span> &#8211; add &#8220;github_username: username&#8221; to ~/.rubyforge/user-config.yml and newgem will reuse it for future projects.</p>
-<ul>
-	<li>gitorious: <a href="git://gitorious.org/temperature/mainline.git">git://gitorious.org/temperature/mainline.git</a></li>
-</ul>
-<pre>git clone git://gitorious.org/temperature/mainline.git</pre>
+<pre>git clone git://github.com/sdague/temperature.git</pre>
 <h3>Build and test instructions</h3>
 <pre>cd temperature
 rake test
@@ -71,9 +76,9 @@ rake install_gem</pre>
 <h2>License</h2>
 <p>This code is free to use under the terms of the <span class="caps">MIT</span> license.</p>
 <h2>Contact</h2>
-<p>Comments are welcome. Send an email to <a href="mailto:FIXME"><span class="caps">FIXME</span> full name</a> email via the <a href="http://groups.google.com/group/temperature">forum</a></p>
+<p>Comments are welcome. Send an email to <a href="mailto:sean@dague.net">Sean Dague</a></p>
     <p class="coda">
-      <a href="FIXME email">FIXME full name</a>, 6th March 2010<br>
+      <a href="http://dague.net">Sean Dague</a>, 10th March 2010<br>
       Theme extended from <a href="http://rb2js.rubyforge.org/">Paul Battley</a>
     </p>
 </div>

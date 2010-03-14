@@ -35,13 +35,13 @@ http://en.wikipedia.org/wiki/Dew_point#Closer_approximation
 
 h2. API Documentation
 
-Full module level documentat can be found here:http://sdaguegems.rubyforge.org/temperature/rdoc
-
+Full module level documentation can be found at http://sdaguegems.rubyforge.org/temperature/rdoc
 
 h2. How to submit patches
 
-Read the "8 steps for fixing other people's
-code":http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/
+Read the "8 steps for fixing other people'scode":http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/.
+
+Fork the code on github, then send me a merge request.
 
 * github: "http://github.com/sdague/temperature/tree/master":http://github.com/sdague/temperature/tree/master
 
@@ -53,12 +53,12 @@ h3. Build and test instructions
 rake test
 rake install_gem</pre>
 
-
 h2. License
 
 This code is free to use under the terms of the MIT license. 
 
 h2. Contact
 
-Comments are welcome. Send an email to "Sean Dague":mailto:sean@dague.net
+Comments are welcome. Contact me via
+"github":http://github.com/sdague, or via "my website":http://dague.net
 

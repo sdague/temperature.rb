@@ -105,7 +105,7 @@ class Numeric
         units = self.units
         temp = self.to_C
         e_sub_s = 6.112 * Math.exp((17.76 * temp) / (temp + 243.5))
-        e = rh * e_sub_s / 100
+        e = rh.to_f * e_sub_s / 100
         dew = 243.5 * Math.log(e / 6.112) / (17.67 -  Math.log(e / 6.112))
         dew.units = "C"
         final = dew.send("to_#{units}")
