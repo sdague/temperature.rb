@@ -24,17 +24,23 @@
       }
       var versionBox = new curvyCorners(settings, document.getElementById("version"));
       versionBox.applyCornersToAll();
+      var mainBox = new curvyCorners(settings, document.getElementById("main"));
+      mainBox.applyCornersToAll();
+      var titleBox = new curvyCorners(settings, document.getElementById("title"));
+        titleBox.applyCornersToAll();
     }
   </script>
 </head>
 <body>
 <div id="main">
 
-    <h1>temperature</h1>
+    <div id="title">
+      <h1>temperature</h1>
+    </div>
     <div class="sidebar">
       <div id="version" class="clickable" onclick='document.location = "http://rubyforge.org/projects/sdaguegems"; return false'>
         <p>Get Version</p>
-        <a href="http://rubyforge.org/projects/sdaguegems" class="numbers">1.1.0</a>
+        <a href="http://rubyforge.org/projects/sdaguegems" class="numbers">1.1.1</a>
       </div>
     </div>
     <h2>What</h2>
@@ -61,10 +67,10 @@ based on the <span class="caps">NOAA</span> approximation documented here -<br /
 http://en.wikipedia.org/wiki/Dew_point#Closer_approximation</p>
 <p><pre class='syntax'><span class="ident">dewpoint</span> <span class="punct">=</span> <span class="number">32</span><span class="punct">.</span><span class="ident">dewpoint</span><span class="punct">(</span><span class="number">45</span><span class="punct">)</span></pre></p>
 <h2><span class="caps">API</span> Documentation</h2>
-<p>Full module level documentat can be found here:http://sdaguegems.rubyforge.org/temperature/rdoc</p>
+<p>Full module level documentation can be found at http://sdaguegems.rubyforge.org/temperature/rdoc</p>
 <h2>How to submit patches</h2>
-<p>Read the <a href="http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/">8 steps for fixing other people&#8217;s<br />
-code</a></p>
+<p>Read the <a href="http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/">8 steps for fixing other people&#8217;scode</a>.</p>
+<p>Fork the code on github, then send me a merge request.</p>
 <ul>
 	<li>github: <a href="http://github.com/sdague/temperature/tree/master">http://github.com/sdague/temperature/tree/master</a></li>
 </ul>
@@ -76,11 +82,13 @@ rake install_gem</pre>
 <h2>License</h2>
 <p>This code is free to use under the terms of the <span class="caps">MIT</span> license.</p>
 <h2>Contact</h2>
-<p>Comments are welcome. Send an email to <a href="mailto:sean@dague.net">Sean Dague</a></p>
+<p>Comments are welcome. Contact me via<br />
+<a href="http://github.com/sdague">github</a>, or via <a href="http://dague.net">my website</a></p>
     <p class="coda">
-      <a href="http://dague.net">Sean Dague</a>, 10th March 2010<br>
+      <a href="http://dague.net">Sean Dague</a>, 14th March 2010<br>
       Theme extended from <a href="http://rb2js.rubyforge.org/">Paul Battley</a>
     </p>
+
 </div>
 
 <!-- insert site tracking codes here, like Google Urchin -->
