@@ -48,6 +48,7 @@ class Numeric
         when "F" then return self
         when "C" then return self.c2f
         when "K" then return self.k2f
+        when "R" then return self.r2f
         end
     end
 
@@ -58,6 +59,7 @@ class Numeric
         when "F" then return self.f2c
         when "C" then return self
         when "K" then return self.k2c
+        when "R" then return self.r2c
         end
     end
         
@@ -68,7 +70,18 @@ class Numeric
         when "F" then return self.f2k
         when "C" then return self.c2k
         when "K" then return self
+        when "R" then return self.k2r
         end
+    end
+
+    # Convert the temperature to Rankines.
+    def to_R
+      case self.units
+      when "F" then return self.f2r
+      when "C" then return self.c2r
+      when "K" then return self.k2r
+      when "R" then return self
+      end
     end
         
     def c2f
