@@ -11,11 +11,11 @@ class String
     # be C, K, or F, and not have a space between the numer and the
     # units
     def to_degrees
-        if self =~ /^(-?)(\d+)\.(\d+)(F|C|K)$/
+        if self =~ /^(-?)(\d+)\.(\d+)(F|C|K|R)$/
             tmp = "#{$1}#{$2}.#{$3}".to_f
             tmp.units = $4
             return tmp
-        elsif self =~ /^(-?)(\d+)(F|C|K)$/
+        elsif self =~ /^(-?)(\d+)(F|C|K|R)$/
             tmp = "#{$1}#{$2}".to_f
             tmp.units = $3
             return tmp
