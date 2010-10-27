@@ -116,6 +116,30 @@ class Numeric
         self.k2c.c2f
     end
 
+    def r2f
+      num = self - ROffset
+      num.units = "R"
+      return num
+    end
+
+    def f2r
+      num = self + ROffset
+      num.units = "R"
+      return num
+    end
+
+    def c2r
+      num = self * CScale + (ROffset + FOffset)
+      num.units = "R"
+      return num
+    end
+
+    def k2r
+      num = self * CScale
+      num.units = "R"
+      return num
+    end
+
     # Compute the dewpoint for the temperature given a relative
     # humidity.  This is using the NOAA approximation for dewpoint
     # calculation -
