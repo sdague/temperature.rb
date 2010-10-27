@@ -116,7 +116,7 @@ class Numeric
     # not specified.  Valid values are "C", "F", or "K" (R is not
     # currently support... no one really uses that anyway).
     def units
-        if @units
+        if defined?(@units) && @units
             return @units
         else
             # this should auto detect the env, but for now, I live in the US
