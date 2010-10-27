@@ -18,6 +18,8 @@ class Numeric
     FOffset = 32
     # The offset between K and C
     KOffset = 273.15
+    # The offset between R and F
+    ROffset = 459.67
 
     
     # Is this a Farenheit temperature, returns a boolean
