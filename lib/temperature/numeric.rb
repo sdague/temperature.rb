@@ -37,6 +37,10 @@ class Numeric
         return self.units == "K"
     end
 
+    def is_R?
+        return self.units == "R"
+    end
+
     # Convert the temperature to Farenheit.  If it's already in F, it
     # returns itself.
     def to_F
