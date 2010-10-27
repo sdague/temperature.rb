@@ -168,7 +168,7 @@ class Numeric
     end
         
     def units=(units)
-        if units =~ /^(C|F|K)/
+        if units =~ /^(C|F|K|R)/
             @units = units
         end
         return @units
