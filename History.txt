@@ -1,6 +1,9 @@
-=== 1.1.2 ....
-* 1 minor bug fix
+=== 1.2 ===
+* 2 minor bug fix
   * fix rakefile to do readme correctly
+  * fix a warning (thanks to Matt Nelson)
+* 1 major enhancement
+  * Add Rankine units (thanks to Matt Nelson)
 
 === 1.1.1 2010-03-14
 * 1 minor bug fix

@@ -40,6 +40,11 @@ http://en.wikipedia.org/wiki/Dew_point#Closer_approximation
 
 sudo gem install temperature
 
+== AUTHORS:
+
+Sean Dague - maintainer
+Matt Nelson
+
 == LICENSE:
 
 (The MIT License)
