@@ -22,6 +22,12 @@ $hoe = Hoe.spec 'temperature' do
 
 end
 
+if ENV['UNDER_HUDSON']
+  require 'ci/reporter/rake/test_unit'
+  task :test => ["ci:setup:testunit"]
+end
+
+
 require 'newgem/tasks'
 Dir['tasks/**/*.rake'].each { |t| load t }
 
